@@ -1,8 +1,8 @@
-console.log("SUUUUUP");
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice(){
     num = Math.floor(Math.random() * 3)
-    console.log(num);
     if (num === 0){
         return "Rock";
     }
@@ -15,10 +15,62 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let user = prompt("Please enter (1) for Rock, (2) for Paper, or (3) Scissors")
+    let user = prompt("Please enter Rock, Paper, Scissors");
     return user;
 }
 
-let puter = getComputerChoice();
-console.log(puter);
-const hum = getHumanChoice;
+function play(hum, comp){
+    if(hum === comp){
+        return 2;
+    }
+    else if(hum === "Rock" && comp === "Paper"){
+        return 0;
+    }
+    else if(hum === "Rock" && comp === "Scissors"){
+        return 1;
+    }
+    else if(hum === "Paper" && comp === "Rock"){
+        return 1;
+    }
+    else if(hum === "Paper" && comp === "Scissors"){
+        return 0;
+    }
+    else if(hum === "Scissors" && comp === "Rock"){
+        return 0;
+    }
+    else if(hum === "Scissors" && comp === "Paper"){
+        return 1;
+    }
+}
+
+function rounds(x){
+
+
+    for(let i = 0; i < x; i++){
+
+        let puter = getComputerChoice();
+        console.log(puter);
+        let hum = getHumanChoice();
+        console.log(hum);
+        let winner = play(hum, puter);
+
+        if(winner === 1){
+            console.log("You won!" ,hum, " beats", puter);
+            humanScore++;
+        }
+        else if(winner === 0){
+            console.log("You lost!", puter, " beats", hum);
+            computerScore++;
+        }
+        else if(winner === 2){
+            console.log("Its a tie");
+        }
+        console.log("You: ", humanScore, " Computer: ", computerScore);
+    }
+}
+
+rounds(5);
+
+
+
+
