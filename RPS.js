@@ -4,41 +4,42 @@ let computerScore = 0;
 function getComputerChoice(){
     num = Math.floor(Math.random() * 3)
     if (num === 0){
-        return "Rock";
+        return "rock";
     }
     else if(num === 1){
-        return "Paper";
+        return "paper";
     }
     else if(num === 2){
-        return "Scissors";
+        return "scissors";
     }
 }
 
 function getHumanChoice(){
     let user = prompt("Please enter Rock, Paper, Scissors");
-    return user;
+    let lowerUser = user.toLowerCase();
+    return lowerUser;
 }
 
 function play(hum, comp){
     if(hum === comp){
         return 2;
     }
-    else if(hum === "Rock" && comp === "Paper"){
+    else if(hum === "rock" && comp === "paper"){
         return 0;
     }
-    else if(hum === "Rock" && comp === "Scissors"){
+    else if(hum === "rock" && comp === "scissors"){
         return 1;
     }
-    else if(hum === "Paper" && comp === "Rock"){
+    else if(hum === "paper" && comp === "rock"){
         return 1;
     }
-    else if(hum === "Paper" && comp === "Scissors"){
+    else if(hum === "paper" && comp === "scissors"){
         return 0;
     }
-    else if(hum === "Scissors" && comp === "Rock"){
+    else if(hum === "scissors" && comp === "rock"){
         return 0;
     }
-    else if(hum === "Scissors" && comp === "Paper"){
+    else if(hum === "scissors" && comp === "paper"){
         return 1;
     }
 }
