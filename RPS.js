@@ -54,12 +54,18 @@ function rounds(hum, puter){
         const result = document.getElementById("result");
         const score = document.getElementById("score");
 
-        if(winner === 1){
+        if(humanScore >= 5){
+            result.innerHTML = "You have already won, please refresh the page in order to continue";
+        }
+        else if(computerScore >= 5){
+            result.innerHTML = "You Lost! Please refresh to try again";
+        }
+        else if(winner === 1){
             result.innerHTML = "You won! " + hum + " beats " + puter;
             humanScore++;
         }
         else if(winner === 0){
-            result.innerHTML ="You lost! " + puter + " beats " hum;
+            result.innerHTML ="You lost! " + puter + " beats " + hum;
             computerScore++;
         }
         else if(winner === 2){
@@ -69,7 +75,6 @@ function rounds(hum, puter){
     }
 
 
-//rounds(0); //sets the amoutn of rounds that you play against computer
 
 
 
