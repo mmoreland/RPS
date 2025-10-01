@@ -81,17 +81,34 @@ function rounds(hum, puter){
 const rock = document.getElementById("Rock");
 const paper = document.getElementById("Paper");
 const sci = document.getElementById("Scissors");
+//element for clicking the buttons
+const rock_img = document.getElementById("rck");
+const paper_img = document.getElementById("ppr");
+const sci_img = document.getElementById("scrs");
+//going to let users select the images as well
 
 rock.addEventListener("click", () => {
         let comp = getComputerChoice();
         rounds("rock", comp);
     });
+rock_img.addEventListener("click", () => {
+        let comp = getComputerChoice();
+        rounds("rock", comp);
+    });  
 
 paper.addEventListener("click", () => {
         let comp = getComputerChoice();
         rounds("paper", comp);
     });
+paper_img.addEventListener("click", () => {
+        let comp = getComputerChoice();
+        rounds("paper", comp);
+    });
 sci.addEventListener("click", () => {
+        let comp = getComputerChoice();
+        rounds("scissors", comp);
+    });
+sci_img.addEventListener("click", () => {
         let comp = getComputerChoice();
         rounds("scissors", comp);
     });
